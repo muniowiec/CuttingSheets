@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .bin {
+        position: relative;
+        margin: 20px;
+        background: #eee;
+      }
+
+      .bin .label {
+        position: absolute;
+        bottom: -15px;
+        right: 5px;
+        font-size: 10px;
+      }
+
+      .box {
+        position: absolute;
+        border: 1px solid white;
+        background: #0a0;
+        box-sizing: border-box;
+      }
+
+      .box .box-label {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 7.5px;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <% bins.each do |bin| %>
+        <div class="bin" style="width: <%= zoom(bin.width) %>px; height: <%= zoom(bin.height) %>px;">
+          <div>
+            <% bin.boxes.each do |box| %>
+              <div class="box" style="width: <%= zoom(box.width) %>px; height: <%= zoom(box.height) %>px; left: <%= zoom(box.x) %>px; top: <%= zoom(box.y) %>px;">
+                <span class="box-label"><%= box.label %></span>
+              </div>
+            <% end %>
+          </div>
+          <span class="label"><%= bin.label %></span>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>

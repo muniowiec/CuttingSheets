@@ -1,0 +1,2 @@
+class Ordersheet < ApplicationRecord
+end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @sheet.id %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @sheet.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @sheet.width %>
+</p>
+
+<%= link_to 'Edit', edit_sheet_path(@sheet) %> |
+<%= link_to 'Back', sheets_path %>

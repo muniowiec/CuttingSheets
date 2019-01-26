@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .bin {
+      position: relative;
+      margin: 20px;
+      background: #eee;
+    }
+
+    .bin .label {
+      position: absolute;
+      bottom: -15px;
+      right: 5px;
+      font-size: 10px;
+    }
+
+    .box {
+      position: absolute;
+      border: 1px solid white;
+      background: #0a0;
+      box-sizing: border-box;
+    }
+
+    .box .box-label {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      font-size: 7.5px;
+      color: #000000;
+    }
+
+    .free_rectangle {
+      position: absolute;
+      border: 1px solid white;
+      background: #aa0004;
+      box-sizing: border-box;
+    }
+
+    .free_rectangle .free_rectangle-label {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      font-size: 7.5px;
+      color: #000000;
+    }
+
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 5px 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 1px 1px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+
+    .button:visited {
+      color: white;
+    }
+
+    .button:hover {
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  </style>
+</head>
+
+<body>
+<div>
+  <% used_bins.each do |bin| %>
+    <div class="bin" style="width: <%= zoom*bin.width %>px; height: <%= zoom*bin.height %>px;">
+      <div>
+        <% bin.boxes.each do |box| %>
+          <div class="box" style="width: <%= zoom*box.width %>px; height: <%= zoom*box.height %>px; left: <%= zoom*box.x %>px; top: <%= zoom*box.y %>px;">
+            <span class="box-label"><%= box.label %></span>
+          </div>
+        <% end %>
+        <% bin.free_spaces.each do |box| %>
+          <div class="free_rectangle" style="width: <%= zoom*box.width %>px; height: <%= zoom*box.height %>px; left: <%= zoom*box.x %>px; top: <%= zoom*box.y %>px;">
+            <span class="free_rectangle-label"><%= box.label %></span>
+          </div>
+        <% end %>
+      </div>
+      <span class="label"><%= bin.label %></span>
+    </div>
+  <% end %>
+</div>
+</body>
+</html>
+<%= link_to 'Back', ordersheets_path, :class => 'button' %>
+

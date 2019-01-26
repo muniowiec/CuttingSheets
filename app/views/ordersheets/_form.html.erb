@@ -1,0 +1,32 @@
+<%= form_with(model: ordersheet, local: true) do |form| %>
+  <% if ordersheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ordersheet.errors.count, "error") %> prohibited this ordersheet from being saved:</h2>
+
+      <ul>
+      <% ordersheet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, id: :ordersheet_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height, id: :ordersheet_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :width, id: :ordersheet_width %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

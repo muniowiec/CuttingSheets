@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @ordersheet.amount %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @ordersheet.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @ordersheet.width %>
+</p>
+
+<%= link_to 'Edit', edit_ordersheet_path(@ordersheet) %> |
+<%= link_to 'Back', ordersheets_path %>

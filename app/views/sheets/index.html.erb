@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 1px;
+      white-space: nowrap;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 5px 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 1px 1px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+
+    .button1:hover {
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  </style>
+</head>
+<body>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Sheets</h1>
+
+<%= link_to 'New Sheets', new_sheet_path, :class => 'button button1' %>
+<%= link_to 'Main Page', root_path, :class => 'button button1' %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Height</th>
+      <th>Width</th>
+      <th>Scrap</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sheets.each do |sheet| %>
+      <tr>
+        <td><%= sheet.id %></td>
+        <td><%= sheet.height %></td>
+        <td><%= sheet.width %></td>
+        <td><%= sheet.isScrap %></td>
+        <td><%= link_to 'Show', sheet %></td>
+        <td><%= link_to 'Edit', edit_sheet_path(sheet) %></td>
+        <td><%= link_to 'Destroy', sheet, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

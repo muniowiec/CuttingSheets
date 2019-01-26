@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 25px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 1px 1px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+
+    .button:visited {
+      color: white;
+    }
+
+    .button:hover {
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    /*
+* multi-line comment
+*/
+    p{ line-height: 1em; }
+    h1, h2, h3, h4{
+      color: #4CAF50;
+      font-weight: normal;
+      line-height: 1.1em;
+      margin: 0 0 .5em 0;
+    }
+    h1{ font-size: 1.7em; }
+    h2{ font-size: 1.5em; }
+    a{
+      color: black;
+      text-decoration: none;
+    }
+    a:hover,
+    a:active{ text-decoration: underline; }
+
+    /* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
+
+    body{
+      font-family: arial; font-size: 80%; line-height: 1.2em; width: 100%; margin: 0; background: #eee;
+    }
+    /* you can put your code all in one line like above */
+    #page{ margin: 20px; }
+
+    /* or on different lines like below */
+    #logo{
+      font-size: 18px;
+      width: 35%;
+      margin-top: 5px;
+      font-family: georgia;
+      display: inline-block;
+    }
+    /* but try and be as concise as possible */
+    #nav{
+      width: 60%;
+      display: inline-block;
+      text-align: right;
+      float: right;
+    }
+    #nav ul{}
+    #nav ul li{
+      display: inline-block;
+      height: 62px;
+    }
+    #nav ul li a{
+      padding: 20px;
+      background: #4CAF50;
+      color: white;
+    }
+    #nav ul li a:hover{
+      background-color: #58af78;
+      box-shadow: 0px 1px 1px #666;
+    }
+    #nav ul li a:active{ background-color: #56e05a; }
+
+    #content{
+      margin: 30px 0;
+      background: white;
+      padding: 20px;
+      clear: both;
+    }
+    #footer{
+      border-bottom: 1px #ccc solid;
+      margin-bottom: 10px;
+    }
+    #footer p{
+      text-align: right;
+      text-transform: uppercase;
+      font-size: 80%;
+      color: grey;
+    }
+
+    /* multiple styles seperated by a , */
+    #content,
+    ul li a{ box-shadow: 0px 1px 1px #999; }
+
+  </style>
+</head>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- your webpage info goes here -->
+
+  <title>Sheets Cutting</title>
+
+  <meta name="author" content="Pawel and Mateusz" />
+  <meta name="description" content="" />
+
+</head>
+<body>
+
+<div id="page">
+  <div id="logo">
+    <h1><a href="/" id="logoLink">Sheets Cutting</a></h1>
+  </div>
+  <div id="nav">
+    <ul>
+      <%= link_to 'View Sheets', sheets_path, :class => 'button' %>
+      <%= link_to 'Place an Order', ordersheets_path, :class => 'button' %>
+    </ul>
+  </div>
+  <div id="content">
+    <h2>Welcome</h2>
+    <p>
+      Software that has been implemented as part of this project enables:
+    </p>
+    <p>
+      • Introducing new sheets of various sizes into the database,
+    </p>
+    <p>
+      • Entering orders consisting of various boards,
+    </p>
+    <p>
+      • Defining the threshold on the basis of which the suitability of other elements (treating as waste or as a scrap) is determined, which will be used in the future with a higher priority.
+    </p>
+    <%= image_tag('example.png') %>
+  </div>
+  <div id="footer">
+    <p>
+      Webpage made by Pawel and Mateusz
+    </p>
+  </div>
+</div>
+</body>
+</html>
+
